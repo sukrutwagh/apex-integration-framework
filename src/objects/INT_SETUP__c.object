@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Sets up an Salesforce Object Type for external system Integration purpose.</description>
+    <enableActivities>false</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <fields>
+        <fullName>Allowed_Schedulables__c</fullName>
+        <description>In case the integration is triggerred from an Apex Schedulable, Specifies the set of Apex schedulable classes allowed for integrations.
+If no value is selected, integrations will be allowed from all schedulables.
+Here is an example:
+CM_ETMF_Schedulable will be scheduled at specific times. There is a common Schedulable (CM_Integration_Schedulable) that is scheduled at specific times.
+In case, you want to skip ETMF integration logic processed by CM_Integration_Schedulable,
+you must not include CM_Integration_Schedulable for ETMF integrations for a specific Type_API_Name__c</description>
+        <externalId>false</externalId>
+        <inlineHelpText>In case the integration is triggerred from an Apex Schedulable, Specifies the set of Apex schedulable classes allowed for integrations.
+If no value is selected, integrations will be allowed from all schedulables.</inlineHelpText>
+        <label>Allowed Schedulables</label>
+        <picklist>
+            <picklistValues>
+                <fullName>CM_ETMF_Schedulable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM_CTMS_Schedulable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>COM_IntegrationSchedulable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Enabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines if the integration configuration is enabled. Integration services will check this value before performing any integration invocations.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines if the integration configuration is enabled. Integration services will check this value before performing any integration invocations.</inlineHelpText>
+        <label>Enabled</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>System__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Integration System</label>
+        <referenceTo>INT_SYSTEM__c</referenceTo>
+        <relationshipName>Type_And_System_Integration_Setups</relationshipName>
+        <required>true</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Type_API_Name__c</fullName>
+        <description>API Names of the standard/custom objects</description>
+        <externalId>false</externalId>
+        <inlineHelpText>API Names of the standard/custom objects</inlineHelpText>
+        <label>Type API Name</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Apttus__APTS_Agreement__c</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <label>Integration Setup</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Integration Setups</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>System__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Type_API_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>UPDATEDBY_USER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LAST_UPDATE</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>System__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Type_API_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>UPDATEDBY_USER</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>LAST_UPDATE</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

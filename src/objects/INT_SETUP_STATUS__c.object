@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Maintains a record about integration status such as status, returned attributes, exceptions, etc</description>
+    <enableActivities>false</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <fields>
+        <fullName>Attributes_JSON__c</fullName>
+        <description>Contains the attributes returned via the integration call.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Contains the attributes returned via the integration call.</inlineHelpText>
+        <label>Attributes JSON</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Exception__c</fullName>
+        <description>Captures any exception occurred during the integration</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Captures any exception occurred during the integration</inlineHelpText>
+        <label>Exception</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IntegrationSetup__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Integration Setup</label>
+        <referenceTo>INT_SETUP__c</referenceTo>
+        <relationshipLabel>Integration Setup Statuses</relationshipLabel>
+        <relationshipName>Integration_Setup_Statuses</relationshipName>
+        <required>true</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>IntegrationStatus__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Integration Status</label>
+        <referenceTo>INT_STATUS__c</referenceTo>
+        <relationshipName>Type_And_System_Integration_Statuses</relationshipName>
+        <required>true</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Unique_Key__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Unique key used for integration. This will differ for each integration.
+Ex:
+ETMF_Apttus__Agreement_Document__c uses UK=Apttus__APTS_Agreement__c.Id+_+Apttus__Agreement_Document__c.Id+_+Document.Id
+
+CTMS_Apttus__Agreement_Document__c uses
+UK=Apttus__APTS_Agreement__c.Id
+
+In case of async integrations, the async service uses this field as external id to update the appropriate row status</description>
+        <externalId>true</externalId>
+        <inlineHelpText>Unique key used for integration. This will differ for each integration.
+In case of async integrations, the async service uses this field as external id to update the appropriate row status</inlineHelpText>
+        <label>Unique Key</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>Integration Setup Status</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Integration Setup Statuses</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>IntegrationStatus__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IntegrationSetup__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LAST_UPDATE</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>IntegrationStatus__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>IntegrationSetup__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>LAST_UPDATE</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>IntegrationStatus__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>IntegrationSetup__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LAST_UPDATE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

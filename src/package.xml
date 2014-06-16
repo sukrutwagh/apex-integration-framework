@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>COM_BaseIntegrationService</members>
+        <members>COM_Constants</members>
+        <members>COM_ErrorCode</members>
+        <members>COM_Exception</members>
+        <members>COM_Factory</members>
+        <members>COM_FactoryUTest</members>
+        <members>COM_IIntegrationService</members>
+        <members>COM_IntegrationBatch</members>
+        <members>COM_IntegrationConstants</members>
+        <members>COM_IntegrationSchedulable</members>
+        <members>COM_IntegrationUtils</members>
+        <members>COM_IntegrationUtilsUTest</members>
+        <members>COM_Logger</members>
+        <members>COM_LoggerUTest</members>
+        <members>COM_ServiceResult</members>
+        <members>COM_Utils</members>
+        <members>COM_UtilsUTest</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>INT_SETUP_STATUS__c</members>
+        <members>INT_SETUP__c</members>
+        <members>INT_STATUS__c</members>
+        <members>INT_SYSTEM_TYPE__c</members>
+        <members>INT_SYSTEM__c</members>
+        <name>CustomObject</name>
+    </types>
+</Package>

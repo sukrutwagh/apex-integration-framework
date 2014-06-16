@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Defines the different external systems used for integrations.</description>
+    <enableActivities>false</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Brief description about the system.
+Example:
+CTMS or Clinical Trials Management System is an application based on Oracle Siebel Systems e-Clinical software.  It is the central, global repository for clinical trial monitoring and management at PRA.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Brief description about the system.
+Example:
+CTMS or Clinical Trials Management System is an application based on Oracle Siebel Systems e-Clinical software.  It is the central, global repository for clinical trial monitoring and management at PRA.</inlineHelpText>
+        <label>Description</label>
+        <required>true</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>SystemType__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>System Type</label>
+        <referenceTo>INT_SYSTEM_TYPE__c</referenceTo>
+        <relationshipLabel>Integration Systems</relationshipLabel>
+        <relationshipName>INT_SYSTEMS</relationshipName>
+        <required>true</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>System__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Label of the external system. Used in business logic by integration services. Once a record is created, this value should never be changed.
+Please create these labels following some standard conventions. Use upper case only.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Label of the external system. Used in business logic by integration services. Once a record is created, this value should never be changed.
+Please create these labels following some standard conventions. Use upper case only.
+Examples: 
+EDC_DATALABS</inlineHelpText>
+        <label>System</label>
+        <length>30</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>Integration System</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>System__c</columns>
+        <columns>SystemType__c</columns>
+        <columns>Description__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Integration Systems</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>System__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>SystemType__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>UPDATEDBY_USER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LAST_UPDATE</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>System__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>SystemType__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Description__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>System__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SystemType__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Description__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>
