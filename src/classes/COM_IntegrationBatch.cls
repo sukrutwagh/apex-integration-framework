@@ -1,4 +1,4 @@
-global class COM_IntegrationBatch extends PRA_BatchaQueueable implements Database.AllowsCallouts,Database.Stateful {
+global class COM_IntegrationBatch extends COM_BatchQueueable implements Database.AllowsCallouts,Database.Stateful {
 
     private static final String CLASSNAME = 'COM_IntegrationBatch';
     private static final COM_Logger LOGGER = new COM_Logger(CLASSNAME);
@@ -45,7 +45,7 @@ global class COM_IntegrationBatch extends PRA_BatchaQueueable implements Databas
         this.intSystem = params.get(0);     
         this.sObjType = params.get(1);
         this.emailRecipients = params.get(2);
-        this.service = COM_Factory.getIntegrationService(getIntSystem(), getSObjType());
+        this.service = COM_IntegrationFactory.getIntegrationService(getIntSystem(), getSObjType());
         this.query = getService().getProcessingQuery();
         this.totalRecords = 0;
         this.results = new List<COM_ServiceResult>();
